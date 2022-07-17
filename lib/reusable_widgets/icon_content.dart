@@ -1,6 +1,6 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
-const labelTextStyle = TextStyle(fontSize: 18.0, color: Color(0xFF8D8E98));
 
 class CardChildContent extends StatelessWidget {
   const CardChildContent(
@@ -21,7 +21,7 @@ class CardChildContent extends StatelessWidget {
         const SizedBox(height: 15.0),
         Text(
           cardLabel,
-          style: labelTextStyle,
+          style: kLabelTextStyle,
         )
       ],
     );
