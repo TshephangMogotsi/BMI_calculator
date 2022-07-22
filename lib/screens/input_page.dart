@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -25,7 +26,6 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kInactiveCardColor,
         title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
@@ -155,7 +155,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                 Expanded(
+                Expanded(
                   child: ReusableCard(
                     colour: kActiveCardColor,
                     cardChild: Column(
@@ -198,16 +198,22 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: const EdgeInsets.only(top: 10.0),
-            height: kBottomContainerHeight,
-            child: const Text('Calculate'),
-          )
+          GestureDetector(
+            onTap: (() => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ResultsPage()))),
+            child: Container(
+              color: kBottomContainerColor,
+              margin: const EdgeInsets.only(top: 10.0),
+              height: kBottomContainerHeight,
+              child: const Center(
+                  child: Text(
+                'CALCULATE',
+                style: kCalculateTextStyle,
+              )),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-
